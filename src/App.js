@@ -5,37 +5,52 @@ import image from "./assets/MV5BODE0MzZhZTgtYzkwYi00YmI5LThlZWYtOWRmNWE5ODk0NzMx
 import NavBar from "./NavBar";
 
 function App() {
-  let movies = [
-    {
-      title: "The Matrix",
-      poster:
-        "https://upload.wikimedia.org/wikipedia/en/thumb/c/c1/The_Matrix_Poster.jpg/220px-The_Matrix_Poster.jpg",
-    },
-    {
-      title: "The Matrix Reloaded",
-      poster: image,
-    },
-    {
-      title: "The Matrix Revolutions",
-      poster: image,
-    },
-  ];
+  let [movieTitles, setMovieTitles] = useState([]);
 
-  let displayMovies = () => {
-    let movieList = movies.map((movie) => {
+  let getWeeklyTrendingMovies = () => {
+    console.log("function called");
+    fetch(
+      "https://api.themoviedb.org/3/trending/movie/week?api_key=485d8a56998fcd2544afe768df960067",
+      { mode: "cors" }
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((results) => {
+        return results.results;
+      })
+      .then((info) => {
+        console.log(info);
+        let trendingMovieTitles = info.map((info) => ({
+          title: info.title,
+          Poster: "https://image.tmdb.org/t/p/w500" + info.poster_path,
+        }));
+        setMovieTitles(trendingMovieTitles);
+      });
+  };
+  useEffect(() => {
+    //using useEffect to call the function only once
+    getWeeklyTrendingMovies();
+  }, []);
+
+  let displayMovies = (movieTitles) => {
+    //function to display the movies
+    let movieList = movieTitles.map((movie) => {
+      //
       return (
+        //returning the movie card component
         <li key={movie.title}>
-          <MovieCard title={movie.title} poster={movie.poster} />
+          <MovieCard title={movie.title} poster={movie.Poster} />
         </li>
       );
     });
-    return <ul className="movieList">{movieList}</ul>;
+    return <ul className="movieList">{movieList}</ul>; //returning the list of movies
   };
 
   return (
     <div className="App">
       <NavBar />
-      {displayMovies()}
+      {displayMovies(movieTitles)}
     </div>
   );
 }
