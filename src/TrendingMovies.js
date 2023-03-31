@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MovieCard from "./MovieCard";
+import "./TrendingMovies.css";
 
 function TrendingMovies() {
   let [movieTitles, setMovieTitles] = useState([]);
@@ -41,7 +42,13 @@ function TrendingMovies() {
     return <ul className="movieList">{movieList}</ul>;
   };
 
-  return <div>{displayMovies(movieTitles)}</div>;
+  return (
+    <div className="trendingMovies">
+      <h2>Fan Favorites</h2>
+      <h3>This week's top Movies</h3>
+      {displayMovies(movieTitles)}
+    </div>
+  );
 }
 
 export default TrendingMovies;

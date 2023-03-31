@@ -5,7 +5,7 @@ let NavBar = () => {
   return (
     <div className="navbarContainer">
       <div className="navbar">
-        <h3>Ripple Film Hub</h3>
+        <h3 className="appTitle">RIPDb</h3>
         <h3>Menu</h3>
         <input type="text" placeholder="Search..." />
       </div>
