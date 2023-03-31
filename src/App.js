@@ -2,6 +2,7 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 import image from "./assets/MV5BODE0MzZhZTgtYzkwYi00YmI5LThlZWYtOWRmNWE5ODk0NzMxXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg";
+import NavBar from "./NavBar";
 
 function App() {
   let movies = [
@@ -28,10 +29,15 @@ function App() {
         </li>
       );
     });
-    return <ul>{movieList}</ul>;
+    return <ul className="movieList">{movieList}</ul>;
   };
 
-  return <div className="App">{displayMovies()}</div>;
+  return (
+    <div className="App">
+      <NavBar />
+      {displayMovies()}
+    </div>
+  );
 }
 
 export default App;

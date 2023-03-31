@@ -2,3 +2,14 @@ img {
   height: 304px;
   width: 220px;
 }
+
+.movieList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+}
+li {
+  flex: 1;
+}

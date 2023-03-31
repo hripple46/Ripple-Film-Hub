@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./MovieCard.css";
 
 let MovieCard = ({ title, poster }) => {
   let [rating, setRating] = useState();
