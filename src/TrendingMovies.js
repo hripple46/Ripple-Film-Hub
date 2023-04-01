@@ -16,6 +16,8 @@ function TrendingMovies() {
       })
       .then((results) => {
         return results.results;
+        // This code converts a string to an array of characters. It is used in the
+        // function that checks if a string is a palindrome.
       })
       .then((info) => {
         console.log(info);

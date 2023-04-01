@@ -3,4 +3,8 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
+  margin-bottom: 24px;
+}
+.movie-card > h1 {
+  margin-bottom: 10px;
 }
