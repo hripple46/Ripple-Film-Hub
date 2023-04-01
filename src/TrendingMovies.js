@@ -37,7 +37,11 @@ function TrendingMovies() {
     let movieList = movieTitles.map((movie) => {
       return (
         <li key={movie.title}>
-          <MovieCard title={movie.title} poster={movie.Poster} />
+          <MovieCard
+            title={movie.title}
+            poster={movie.Poster}
+            id={movie.title}
+          />
         </li>
       );
     });
