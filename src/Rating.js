@@ -4,32 +4,37 @@ import Icon from "./Icon";
 import "./Rating.css";
 
 export default function Rating(props) {
+  let [highlighted, setHighlighted] = useState(-1);
   let showStars = () => {
     let fiveStars = document.querySelector(".mainFiveStars");
     fiveStars.style.display = "flex"; //displaying the five stars for rating
     fiveStars.addEventListener("click", () => {
       fiveStars.style.display = "none"; //hiding the five stars after a rating is submitted
-      let star = document.querySelector(".mainFiveStars");
-      let stars = star.getElementsByTagName("svg");
-      for (let i = 0; i < stars.length; i++) {
-        stars[i].style.fill = "white";
-      }
+      setHighlighted(-1);
     });
   };
-  let highlight = () => {
-    //highlighting the stars when the mouse is over them
-    let star = document.querySelector(".mainFiveStars");
-    let stars = star.getElementsByTagName("svg");
-    console.log(stars);
-    for (let i = 0; i < stars.length; i++) {
-      stars[i].addEventListener("mouseover", function () {
-        for (let j = 0; j < i + 1; j++) {
-          stars[j].style.fill = "yellow";
-        }
+  let highlightStars = () => {
+    let stars = document.querySelector(".mainFiveStars");
+    let star = stars.getElementsByTagName("svg");
+    for (let i = 0; i < star.length; i++) {
+      star[i].addEventListener("mouseover", () => {
+        setHighlighted(i);
       });
     }
   };
-  highlight();
+  highlightStars();
+
+  if (highlighted >= -1) {
+    let stars = document.querySelector(".mainFiveStars");
+    let star = stars.getElementsByTagName("svg");
+    for (let i = 0; i < star.length; i++) {
+      if (i <= highlighted) {
+        star[i].style.fill = "yellow";
+      } else {
+        star[i].style.fill = "white";
+      }
+    }
+  }
 
   return (
     <div key={props.key} className="oneStar" id={props.id} onClick={showStars}>
