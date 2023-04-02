@@ -23,14 +23,14 @@
   align-items: center;
 }
 .mainFiveStars {
-  width: 50%;
-  min-height: 25%;
+  width: 100%;
+  height: 100%;
   flex-direction: column;
   position: fixed;
   display: none;
   background-color: rgba(0, 0, 0, 0.5);
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -38,7 +38,7 @@
 }
 .flexStars {
   height: auto;
-  width: 100%;
+  width: 25%;
   display: flex;
   flex-direction: row nowrap;
   margin-bottom: 18px;
