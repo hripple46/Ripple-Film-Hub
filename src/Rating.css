@@ -22,3 +22,31 @@
   justify-content: center;
   align-items: center;
 }
+.mainFiveStars {
+  width: 50%;
+  min-height: 25%;
+  flex-direction: column;
+  position: fixed;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: space-evenly;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(12px);
+}
+.flexStars {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row nowrap;
+  margin-bottom: 18px;
+}
+.rateThis {
+  color: #f5c518;
+  margin-bottom: 4px;
+}
+.rateMovieTitle {
+  margin-top: 4px;
+}

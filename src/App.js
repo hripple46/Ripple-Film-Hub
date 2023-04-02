@@ -9,11 +9,16 @@ function App() {
       <NavBar />
       <TrendingMovies />
       <div className="mainFiveStars">
-        <Icon />
-        <Icon />
-        <Icon />
-        <Icon />
-        <Icon />
+        <h5 className="rateThis">RATE THIS</h5>
+        <h3 className="rateMovieTitle">placeholder</h3>
+
+        <div className="flexStars">
+          <Icon />
+          <Icon />
+          <Icon />
+          <Icon />
+          <Icon />
+        </div>
       </div>
     </div>
   );

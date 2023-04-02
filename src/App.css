@@ -22,7 +22,7 @@ li {
 .mainFiveStars {
   width: 100%;
   height: auto;
-  position: absolute;
+  position: fixed;
   display: none;
   background-color: rgba(0, 0, 0, 0.5);
   align-items: center;

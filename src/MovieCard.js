@@ -10,7 +10,7 @@ let MovieCard = ({ title, poster, id }) => {
     <div className="movie-card" id={id}>
       <img src={poster} alt={title} />
       <h1>{title}</h1>
-      <Rating id={id + "oneStar"} />
+      <Rating id={id + "oneStar"} title={title} />
     </div>
   );
 };
