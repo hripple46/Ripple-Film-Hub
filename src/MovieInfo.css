@@ -1,4 +1,10 @@
 .movieInfoBody {
   margin-left: 48px;
   margin-right: 48px;
+  padding-left: 36px;
+  padding-right: 36px;
+  margin-top: 48px;
+  padding-top: 36px;
+  background-color: rgba(222, 181, 34, 0.057);
+  border-radius: 6px;
 }
