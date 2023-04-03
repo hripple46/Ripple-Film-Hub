@@ -1,10 +1,13 @@
 import React, { useState, setState } from "react";
+import Youtube from "react-youtube";
 import "./MovieInfo.css";
 
 import { useLocation } from "react-router-dom";
 import NavBar from "./NavBar";
 export default function MovieInfo() {
   let [movieTitle, setMovieTitle] = useState("");
+  let [movieID, setMovieID] = useState(0);
+  let [trailerKey, setTrailerKey] = useState("");
   let [moviePoster, setMoviePoster] = useState("");
   let [year, setYear] = useState("");
   let [runtime, setRuntime] = useState("");
@@ -29,6 +32,7 @@ export default function MovieInfo() {
       .then(function (id) {
         let idInteger = parseInt(id);
         console.log(idInteger);
+        setMovieID(idInteger);
         return idInteger;
       })
       .then(function (id) {
@@ -48,8 +52,32 @@ export default function MovieInfo() {
         setYear(response.release_date);
         setRuntime(response.runtime);
         setDescription(response.overview);
+      })
+      .then(function () {
+        return fetch(
+          "https://api.themoviedb.org/3/movie/" +
+            movieID +
+            "/videos?api_key=485d8a56998fcd2544afe768df960067&language=en-US"
+        );
+      })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (response) {
+        console.log(response.results);
+        let trailer = response.results;
+        return trailer;
+      })
+      .then(function (trailer) {
+        let trailerKey = trailer[trailer.length - 1].key;
+        return trailerKey;
+      })
+      .then(function (trailerKey) {
+        setTrailerKey(trailerKey);
+        console.log(trailerKey);
       });
   }
+
   useQuery();
   return (
     <div>
@@ -57,11 +85,25 @@ export default function MovieInfo() {
       <div className="movieInfoBody">
         <h1>{movieTitle}</h1>
         <p>{year + " * " + runtime + " Minutes"}</p>
-        <img
-          className="moviePoster"
-          src={"https://image.tmdb.org/t/p/w500" + moviePoster}
-          alt={title}
-        />
+        <div className="posterAndTrailer">
+          {" "}
+          <img
+            className="moviePoster"
+            src={"https://image.tmdb.org/t/p/w500" + moviePoster}
+            alt={title}
+          />
+          <div className="trailer">
+            <Youtube
+              videoId={trailerKey}
+              containerClassName="youtube-player"
+              opts={{
+                width: "640",
+                height: "360px",
+                playerVars: { autoplay: 1 },
+              }}
+            />
+          </div>
+        </div>
         <p>{description}</p>
       </div>
     </div>

@@ -5,6 +5,14 @@
   padding-right: 36px;
   margin-top: 48px;
   padding-top: 36px;
+  padding-bottom: 144px;
   background-color: rgba(222, 181, 34, 0.057);
   border-radius: 6px;
+}
+
+.posterAndTrailer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
