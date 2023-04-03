@@ -3,7 +3,7 @@
 .navbar {
   display: flex;
   flex-flow: row nowrap;
-  position: fixed;
+
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -25,4 +25,8 @@ input {
   padding: 6px;
   letter-spacing: 1px;
   border-radius: 6px;
+}
+
+.homepageLink {
+  text-decoration: none;
 }
