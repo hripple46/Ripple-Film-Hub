@@ -2,6 +2,7 @@ import "./App.css";
 import TrendingMovies from "./TrendingMovies";
 import NavBar from "./NavBar";
 import Icon from "./Icon";
+import Firebase from "./Firebase";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Icon />
         </div>
       </div>
+      <Firebase />
     </div>
   );
 }
