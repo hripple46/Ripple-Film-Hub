@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./MovieCard.css";
 import Rating from "./Rating";
 import { Link } from "react-router-dom";
+import Firebase from "./Firebase";
 
 let MovieCard = ({ title, poster, id }) => {
   let [rating, setRating] = useState();
@@ -14,6 +15,7 @@ let MovieCard = ({ title, poster, id }) => {
       </Link>
 
       <h1>{title}</h1>
+      <Firebase title={title} />
       <Rating id={id + "oneStar"} title={title} />
     </div>
   );

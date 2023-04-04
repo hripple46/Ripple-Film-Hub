@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import star_white from "./assets/star_white.jpg";
 import Icon from "./Icon";
+import Firebase from "./Firebase";
 import "./Rating.css";
 
 export default function Rating(props) {
