@@ -87,7 +87,9 @@ export default function Rating(props) {
     const docRef = doc(db, "Ratings", movieRated);
     const docSnapshot = await getDoc(docRef);
     if (docSnapshot.exists()) {
-      await updateDoc(docRef, { rating: arrayUnion(value + 1) });
+      let currentRatings = docSnapshot.data().rating;
+      let newRatings = [...currentRatings, value + 1];
+      await updateDoc(docRef, { rating: newRatings });
     } else {
       await setDoc(docRef, { rating: [value + 1] });
     }

@@ -45,11 +45,25 @@ export default function Firebase(props) {
         return data.rating;
       })
       .then((rating) => {
-        // Set the rating
-        setRating(rating);
+        getAverageRating(rating); //call the function to get the average rating
       });
   };
   obtainRating();
+
+  // Return the average rating from a list of ratings
+  let getAverageRating = (ratings) => {
+    let total = 0;
+    ratings.forEach((element) => {
+      total += element;
+    });
+    let average = total / ratings.length;
+    if (average % 1 !== 0) {
+      average = average.toFixed(2);
+      setRating(average);
+    } else {
+      setRating(average);
+    }
+  };
 
   // This code creates a div with a key that is the value of props.title
   // The div is then returned with the value of rating inside of it
