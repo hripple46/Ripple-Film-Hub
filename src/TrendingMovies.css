@@ -6,3 +6,6 @@ h2 {
   border-left: 4px solid #f5c518;
   padding-left: 6px;
 }
+li {
+  margin-bottom: 24px;
+}

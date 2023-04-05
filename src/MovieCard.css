@@ -3,8 +3,10 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: space-between;
   text-align: center;
   margin-bottom: 24px;
+  height: 100%;
 }
 .movie-card > h1 {
   margin-bottom: 10px;
