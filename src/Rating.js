@@ -3,14 +3,32 @@ import star_white from "./assets/star_white.jpg";
 import Icon from "./Icon";
 import Firebase from "./Firebase";
 import "./Rating.css";
+import { initializeApp } from "firebase/app";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  collectionGroup,
+  getDoc,
+  doc,
+  setDoc,
+  updateDoc,
+  arrayUnion,
+} from "firebase/firestore";
 
 export default function Rating(props) {
   let [highlighted, setHighlighted] = useState(-1);
-  let showStars = () => {
+  let [movieRated, setMovieRated] = useState();
+  let showStars = (e) => {
+    let movieId = e.currentTarget.id;
+    let movieString = movieId.substring(0, movieId.length - 7); //this is the id of the movie
+    console.log(movieString);
+    setMovieRated(movieString);
     let fiveStars = document.querySelector(".mainFiveStars");
     let flexStars = document.querySelector(".flexStars");
     let title = document.querySelector(".rateMovieTitle");
     title.innerHTML = props.title; //setting the title of the movie to be rated
+
     fiveStars.style.display = "flex"; //displaying the five stars for rating
     flexStars.style.display = "flex"; //displaying the five stars for rating
     fiveStars.addEventListener("click", () => {
@@ -42,6 +60,36 @@ export default function Rating(props) {
       } else {
         star[i].style.fill = "white";
       }
+    }
+  }
+  const firebaseConfig = {
+    apiKey: "AIzaSyCGzJYJMtNYvxfjKIh2xKKliR60HBYZMpQ",
+    authDomain: "ripdb-91c17.firebaseapp.com",
+    projectId: "ripdb-91c17",
+    storageBucket: "ripdb-91c17.appspot.com",
+    messagingSenderId: "1045345023311",
+    appId: "1:1045345023311:web:373947cc3f88f72e1c813a",
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  function submitRating() {
+    let stars = document.querySelector(".mainFiveStars");
+    let star = stars.getElementsByTagName("svg");
+    for (let i = 0; i < star.length; i++) {
+      star[i].addEventListener("click", () => {
+        appendRating(i);
+      });
+    }
+  }
+  submitRating();
+  async function appendRating(value) {
+    const docRef = doc(db, "Ratings", movieRated);
+    const docSnapshot = await getDoc(docRef);
+    if (docSnapshot.exists()) {
+      await updateDoc(docRef, { rating: arrayUnion(value + 1) });
+    } else {
+      await setDoc(docRef, { rating: [value + 1] });
     }
   }
 
