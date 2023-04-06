@@ -12,10 +12,9 @@
 
 .posterAndTrailer {
   position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-content: center;
 }
 .movieDetails {
   display: flex;
@@ -23,6 +22,37 @@
   align-items: center;
 }
 .posterAndTrailer > img {
-  height: 364px;
+  height: 360px;
   width: auto;
+  justify-self: start;
+}
+.trailer {
+  justify-self: start;
+}
+.posterAndTrailer > p {
+  grid-column: 1 / 3;
+  margin-right: 288px;
+}
+@media (max-width: 1170px) {
+  .posterAndTrailer {
+    grid-template-columns: 1fr 1fr;
+  }
+  .trailer {
+    grid-column: 1 / 3;
+    justify-self: center;
+  }
+  .posterAndTrailer > img {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    justify-self: end;
+    margin-top: 16px;
+  }
+  .posterAndTrailer > p {
+    margin-right: 0px;
+    max-width: 240px;
+    justify-self: start;
+    grid-row: 2 / 3;
+    grid-column: 2/3;
+    padding-left: 36px;
+  }
 }

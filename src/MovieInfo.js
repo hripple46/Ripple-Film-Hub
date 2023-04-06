@@ -103,8 +103,8 @@ export default function MovieInfo() {
               }}
             />
           </div>
+          <p>{description}</p>
         </div>
-        <p>{description}</p>
       </div>
     </div>
   );
