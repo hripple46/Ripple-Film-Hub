@@ -1,4 +1,4 @@
-import React, { useState, setState } from "react";
+import React, { useState, useEffect } from "react";
 import Youtube from "react-youtube";
 import "./MovieInfo.css";
 
@@ -12,7 +12,31 @@ export default function MovieInfo() {
   let [year, setYear] = useState("");
   let [runtime, setRuntime] = useState("");
   let [description, setDescription] = useState("");
+  let [opts, setOpts] = useState({
+    width: "640px",
+    height: "360px",
+    playerVars: { autoplay: 1 },
+  });
+  useEffect(() => {
+    const handleResize = () => {
+      //this function will change the size of the video player depending on the size of the screen
+      const screenWidth = window.innerWidth;
+      if (screenWidth < 709) {
+        setOpts({ ...opts, width: "320px", height: "180px" });
+      } else {
+        setOpts({ ...opts, width: "640", height: "360px" });
+      }
+    };
+
+    window.addEventListener("resize", handleResize); //add the event listener
+
+    return () => {
+      window.removeEventListener("resize", handleResize); //remove the event listener when the component unmounts
+    };
+  }, [opts]); //this will run when the opts state changes
+
   let location = useLocation();
+
   let { title } = location.state;
   function useQuery() {
     //convert the title to a string and replace all spaces with a plus sign
@@ -96,11 +120,7 @@ export default function MovieInfo() {
             <Youtube
               videoId={trailerKey}
               containerClassName="youtube-player"
-              opts={{
-                width: "640",
-                height: "360px",
-                playerVars: { autoplay: 1 },
-              }}
+              opts={opts}
             />
           </div>
           <p>{description}</p>
