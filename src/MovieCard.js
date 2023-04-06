@@ -13,10 +13,12 @@ let MovieCard = ({ title, poster, id }) => {
       <Link to="/movieinfo" state={{ title: title }} className="movieLink">
         <img className="moviePoster" src={poster} alt={title} />
       </Link>
-      <h1>{title}</h1>
-      <div className="movieDetails">
-        <Firebase title={title} />
-        <Rating id={id + "oneStar"} title={title} />
+      <div className="movieDetailsContainer">
+        <h1>{title}</h1>
+        <div className="movieDetails">
+          <Firebase title={title} />
+          <Rating id={id + "oneStar"} title={title} />
+        </div>
       </div>
     </div>
   );

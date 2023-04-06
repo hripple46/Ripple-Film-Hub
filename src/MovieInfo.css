@@ -11,6 +11,7 @@
 }
 
 .posterAndTrailer {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -20,4 +21,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.posterAndTrailer > img {
+  height: 364px;
+  width: auto;
 }
