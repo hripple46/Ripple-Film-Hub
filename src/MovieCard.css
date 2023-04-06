@@ -3,11 +3,19 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: space-between;
+
   text-align: center;
   margin-bottom: 24px;
   height: 100%;
 }
 .movie-card > h1 {
   margin-bottom: 10px;
+}
+.movieDetailsContainer {
+  display: grid;
+  grid-template-rows: 144px 36px;
+}
+.movieDetailsContainer > h1 {
+  font-size: 24px;
+  overflow: hidden;
 }

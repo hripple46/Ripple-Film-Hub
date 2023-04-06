@@ -1,3 +1,12 @@
 svg {
   fill: white;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+svg > g {
+  width: 17px;
+  height: 17px;
 }
