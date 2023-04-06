@@ -22,7 +22,6 @@ let NavBar = () => {
             <h3 className="appTitle">RIPDb</h3>
           </Link>
           <h3 onClick={showMenu}>Menu</h3>
-          <input type="text" placeholder="Search..." />
         </div>
         <div className="spacer"></div>
       </div>

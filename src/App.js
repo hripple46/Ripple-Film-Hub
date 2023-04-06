@@ -4,11 +4,15 @@ import NavBar from "./NavBar";
 import Icon from "./Icon";
 import Firebase from "./Firebase";
 import UpcomingMovies from "./UpcomingMovies";
+import Search from "./Search";
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
+      <div>
+        <NavBar />
+        <Search />
+      </div>
       <TrendingMovies />
       <UpcomingMovies />
       <div className="mainFiveStars">
