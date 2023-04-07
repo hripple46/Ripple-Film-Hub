@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./Search.css";
 
 export default function Search() {
   let [search, setSearch] = useState("");
@@ -30,7 +31,7 @@ export default function Search() {
   };
 
   return (
-    <div>
+    <div className="search">
       <input
         className="search"
         type="text"

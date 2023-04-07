@@ -9,10 +9,8 @@ import Search from "./Search";
 function App() {
   return (
     <div className="App">
-      <div>
-        <NavBar />
-        <Search />
-      </div>
+      <NavBar />
+
       <TrendingMovies />
       <UpcomingMovies />
       <div className="mainFiveStars">
