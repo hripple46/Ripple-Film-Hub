@@ -38,20 +38,23 @@ export default function Search() {
         className="search"
         type="text"
         placeholder="Search"
-        defaultValue=""
+        value={search}
         onChange={handleChange}
       />
       <ul>
         {results.map((result) => {
           return (
-            <li key={result.id}>
-              <Link
-                to="/movieinfo"
-                state={{ title: result.title, poster: result.poster_path }}
-              >
-                {result.title}{" "}
-              </Link>
-            </li>
+            <Link
+              key={result.id}
+              to="/movieinfo"
+              state={{ title: result.title, poster: result.poster_path }}
+              onClick={() => {
+                setSearch("");
+                setResults([]);
+              }}
+            >
+              <li>{result.title} </li>
+            </Link>
           );
         })}
       </ul>

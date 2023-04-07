@@ -22,16 +22,16 @@
   background-color: rgba(84, 80, 80, 0.95);
   border-radius: 6px;
 }
-.search > ul > li:hover {
+.search > ul > a:hover > li {
   background-color: rgba(255, 255, 255, 0.2);
   cursor: pointer;
   padding-left: 12px;
 }
-.search > ul > li {
+.search > ul > a > li {
   padding: 6px;
   margin: 0;
 }
-.search > ul > li > a {
+.search > ul > a {
   text-decoration: none;
   color: white;
 }
