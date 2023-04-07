@@ -93,12 +93,22 @@ export default function MovieInfo() {
         return trailer;
       })
       .then(function (trailer) {
-        let trailerKey = trailer[trailer.length - 1].key;
-        return trailerKey;
+        if (trailer.length === 0) {
+          return null;
+        } else {
+          let trailerKey = trailer[trailer.length - 1].key;
+          return trailerKey;
+        }
       })
       .then(function (trailerKey) {
-        setTrailerKey(trailerKey);
-        console.log(trailerKey);
+        if (!trailerKey) {
+          trailerKey = "dQw4w9WgXcQ";
+          setTrailerKey(trailerKey);
+          console.log(trailerKey);
+        } else {
+          setTrailerKey(trailerKey);
+          console.log(trailerKey);
+        }
       });
   }
 

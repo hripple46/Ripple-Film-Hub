@@ -28,7 +28,10 @@
   padding-left: 12px;
 }
 .search > ul > li {
+  padding: 6px;
   margin: 0;
-  padding-top: 6px;
-  padding-bottom: 6px;
+}
+.search > ul > li > a {
+  text-decoration: none;
+  color: white;
 }
