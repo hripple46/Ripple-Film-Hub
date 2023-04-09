@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Ripple-Film-Hub/static/css/main.b1fba43a.css",
-    "main.js": "/Ripple-Film-Hub/static/js/main.c3935765.js",
+    "main.css": "/Ripple-Film-Hub/static/css/main.8dc005b5.css",
+    "main.js": "/Ripple-Film-Hub/static/js/main.3b346b5a.js",
     "index.html": "/Ripple-Film-Hub/index.html",
-    "main.b1fba43a.css.map": "/Ripple-Film-Hub/static/css/main.b1fba43a.css.map",
-    "main.c3935765.js.map": "/Ripple-Film-Hub/static/js/main.c3935765.js.map"
+    "main.8dc005b5.css.map": "/Ripple-Film-Hub/static/css/main.8dc005b5.css.map",
+    "main.3b346b5a.js.map": "/Ripple-Film-Hub/static/js/main.3b346b5a.js.map"
   },
   "entrypoints": [
-    "static/css/main.b1fba43a.css",
-    "static/js/main.c3935765.js"
+    "static/css/main.8dc005b5.css",
+    "static/js/main.3b346b5a.js"
   ]
 }
