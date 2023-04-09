@@ -61,7 +61,9 @@ let NavBar = () => {
       </div>
       <div className="menu">
         <div className="menuTop">
-          <h3 className="appTitle">RIPDb</h3>
+          <Link className="homepageLink" to="/">
+            <h3 className="appTitle">RIPDb</h3>
+          </Link>
           <div>
             <IconX />
           </div>
