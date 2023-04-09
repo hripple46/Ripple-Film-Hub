@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Ripple-Film-Hub/static/css/main.59da10bb.css",
+    "main.js": "/Ripple-Film-Hub/static/js/main.c3935765.js",
+    "index.html": "/Ripple-Film-Hub/index.html",
+    "main.59da10bb.css.map": "/Ripple-Film-Hub/static/css/main.59da10bb.css.map",
+    "main.c3935765.js.map": "/Ripple-Film-Hub/static/js/main.c3935765.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.59da10bb.css",
+    "static/js/main.c3935765.js"
+  ]
+}
