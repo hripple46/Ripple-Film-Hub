@@ -41,7 +41,6 @@ input {
   transition: transform 1s ease-in-out;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
   align-items: center;
 }
 .headerContainer > h3:hover {
@@ -64,6 +63,8 @@ input {
   flex-flow: row nowrap;
   justify-content: space-around;
   align-self: flex-start;
+  margin-bottom: 144px;
+  margin-top: 72px;
 }
 .menuTop > div:hover {
   cursor: pointer;
