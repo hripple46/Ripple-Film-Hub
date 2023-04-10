@@ -78,4 +78,11 @@
     grid-column: 1/2;
     padding-left: 0px;
   }
+  #root > div > .movieInfoBody {
+    text-align: center;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }

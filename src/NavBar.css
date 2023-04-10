@@ -79,3 +79,8 @@ input {
 .menu > h3:hover {
   cursor: pointer;
 }
+@media (max-width: 709px) {
+  .headerContainer > .search {
+    width: auto;
+  }
+}

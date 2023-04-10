@@ -13,27 +13,23 @@ export default function MovieInfo() {
   let [runtime, setRuntime] = useState("");
   let [description, setDescription] = useState("");
   let [opts, setOpts] = useState({
-    width: "640px",
-    height: "360px",
-    playerVars: { autoplay: 1 },
+    height: "360",
+    width: "640",
   });
+  let [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   useEffect(() => {
-    const handleResize = () => {
-      //this function will change the size of the video player depending on the size of the screen
-      const screenWidth = window.innerWidth;
-      if (screenWidth < 709) {
-        setOpts({ ...opts, width: "320px", height: "180px" });
-      } else {
-        setOpts({ ...opts, width: "640", height: "360px" });
-      }
-    };
-
-    window.addEventListener("resize", handleResize); //add the event listener
-
-    return () => {
-      window.removeEventListener("resize", handleResize); //remove the event listener when the component unmounts
-    };
-  }, [opts]); //this will run when the opts state changes
+    debugger;
+    let windowWidth = window.innerWidth;
+    setWindowWidth(windowWidth);
+    console.log(windowWidth);
+    if (windowWidth < 600) {
+      setOpts({
+        height: "240",
+        width: "320",
+      });
+    }
+  }, [windowWidth]); //this will run when the opts state changes
 
   let location = useLocation();
 
