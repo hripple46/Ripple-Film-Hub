@@ -19,7 +19,6 @@ export default function MovieInfo() {
   let [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    debugger;
     let windowWidth = window.innerWidth;
     setWindowWidth(windowWidth);
     console.log(windowWidth);
