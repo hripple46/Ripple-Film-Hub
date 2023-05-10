@@ -11,7 +11,7 @@ Welcome to Film Hub, your personal web app that functions like IMDb! Here, users
 
 To get started with Film Hub, follow these steps:
 
-1. **Clone the repository**: Clone this repository to your local machine using `git clone https://github.com/yourusername/film-hub.git`.
+1. **Clone the repository**: Clone this repository to your local machine using `git clone https://github.com/hripple46/Ripple-Film-Hub`.
 
 2. **Install dependencies**: Navigate to the project directory and run `npm install` to install the required dependencies.
 
