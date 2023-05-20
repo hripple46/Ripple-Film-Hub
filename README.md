@@ -19,6 +19,6 @@ To get started with Film Hub, follow these steps:
 
 Film Hub offers a variety of features to help users explore movies and share their opinions:
 
-- **Search**: Users can search for movies by title, genre, release year, or director.
-- **Rate Movies**: Users can rate movies on a scale of 1 to 10.
+- **Search**: Users can search for movies by title
+- **Rate Movies**: Users can rate movies on a scale of 1 to 5 stars
 - **Browse**: Browse popular and recently released movies.
